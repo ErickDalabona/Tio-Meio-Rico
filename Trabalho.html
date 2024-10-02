@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro com Card Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Font Awesome CSS para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #ffffff;
+            padding-top: 50px;
+        }
+
+        .card-header {
+            background-color: #570c3a;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        .form-control:focus {
+            border-color: #000000;
+            box-shadow: 0 0 8px rgba(138, 52, 219, 0.6);
+        }
+
+        .btn-primary {
+            background-color: #30012a;
+            border-color: #2980b9;
+        }
+
+        .btn-primary:hover {
+            background-color: #3f0332;
+            border-color: #000000a6;
+        }
+
+        .card-course {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-course:hover {
+            transform: scale(1.05);
+        }
+
+        .card-header-course {
+            font-weight: bold;
+            font-size: 1.2rem;
+            background-color: #290227;
+            color: rgb(255, 255, 255);
+            border-radius: 15px 15px 0 0;
+        }
+
+        footer {
+            background-color: #570c3a;
+            color: white;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        footer a:hover {
+            color: #d1cfcf;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container text-center mb-4">
+        <h1 class="site-title">Tio Meio Rico</h1>
+        <p class="lead">Seu portal para adquirir cursos e avançar em sua carreira!</p>
+    </div>
+
+    <div class="container mb-5">
+        <h1 class="text-center mb-4">Escolha o Nível do Curso</h1>
+        <div class="row text-center">
+            <!-- Card 1: Básico -->
+            <div class="col-md-4 mb-4">
+                <div class="card card-course h-100">
+                    <div class="card-header-course">
+                        Nível Básico
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Preço: R$ 99,00</h5>
+                        <p class="card-text">Ideal para iniciantes que desejam aprender o básico de forma prática e objetiva.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill"></i> Duração: 30 horas</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Acesso Vitalício</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Certificado de Conclusão</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selecionarCurso('Curso Básico')">Selecionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Intermediário -->
+            <div class="col-md-4 mb-4">
+                <div class="card card-course h-100">
+                    <div class="card-header-course">
+                        Nível Intermediário
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Preço: R$ 199,00</h5>
+                        <p class="card-text">Perfeito para quem já possui conhecimento básico e deseja se aprofundar mais.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill"></i> Duração: 60 horas</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Acesso Vitalício</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Certificado Avançado</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selecionarCurso('Curso Intermediário')">Selecionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Avançado -->
+            <div class="col-md-4 mb-4">
+                <div class="card card-course h-100">
+                    <div class="card-header-course">
+                        Nível Avançado
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Preço: R$ 299,00</h5>
+                        <p class="card-text">Para quem deseja dominar completamente o assunto com um conteúdo extenso.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill"></i> Duração: 90 horas</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Acesso Vitalício</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Certificado Profissional</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selecionarCurso('Curso Avançado')">Selecionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card shadow">
+            <div class="card-header text-center">
+                Sistema de Cadastro
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Nome" aria-label="Nome">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Sobrenome">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Endereço Completo" aria-label="Endereço Completo">
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="CEP" aria-label="CEP">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="E-mail" aria-label="Email">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Usuário" aria-label="Usuário">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Senha" aria-label="Senha">
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Estado" aria-label="Estado">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="País" aria-label="País">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" placeholder="Telefone" aria-label="Telefone">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="number" class="form-control" placeholder="Idade" aria-label="Idade">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="curso" class="form-label">Curso Selecionado</label>
+                        <select class="form-select" id="cursoSelecionado">
+                            <option value="" selected>Selecione um curso</option>
+                            <option value="Engenharia de Software">Engenharia de Software</option>
+                            <option value="Administração">Administração</option>
+                            <option value="Contabilidade">Contabilidade</option>
+                            <option value="Logística">Logística</option>
+                            <option value="Engenharia Mecânica">Engenharia Mecânica</option>
+                            <option value="Enfermagem">Enfermagem</option>
+                            <option value="Medicina">Medicina</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="formaPagamento" class="form-label">Forma de Pagamento</label>
+                        <select class="form-select" id="formaPagamento">
+                            <option selected>Selecione a forma de pagamento</option>
+                            <option value="cartao">Cartão de Crédito</option>
+                            <option value="boleto">Boleto</option>
+                            <option value="transferencia">Transferência Bancária</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/erickdalabona" target="_blank" class="text-white">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-o7QIy55nGQDI1StD0AQg1E7cQ1ZB24gbMQe8ABz2Gb5hOApXskQi0gR2bo6aGHJH"
+        crossorigin="anonymous"></script>
+    <script>
+        function selecionarCurso(curso) {
+            document.getElementById('cursoSelecionado').value = curso;
+        }
+    </script>
+
+</body>
+
+</html>
